@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davanagere Calisthenics Festival 2025</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+      animation: drift 20s linear infinite;
+    }
+
+    @keyframes drift {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+      line-height: 1.2;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 18px 50px;
+      background: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255,107,107,0.6);
+      background: #ff5252;
+    }
+
+    .section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 50px;
+      color: #2c3e50;
+    }
+
+    .overview {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .event-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card h3 {
+      color: #667eea;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .activities {
+      background: white;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .activity-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .activity-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(102,126,234,0.4);
+    }
+
+    .activity-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .activity-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .registration {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+
+    .registration .section-title {
+      color: white;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"] {
+      width: auto;
+      cursor: pointer;
+    }
+
+    #msg {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+
+    #msg.success {
+      background: #d4edda;
+      color: #155724;
+      display: block;
+    }
+
+    #msg.error {
+      background: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+
+    .social-proof {
+      background: #f8f9fa;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      color: #667eea;
+      opacity: 0.2;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: #667eea;
+    }
+
+    .faq {
+      background: white;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: #f8f9fa;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question:hover {
+      background: #e9ecef;
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 300px;
+    }
+
+    .faq-toggle {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .footer {
+      background: #2c3e50;
+      color: white;
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+
+    .footer-cta {
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .urgency-badge {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 700;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 1.1rem;
+      }
+
+      .section {
+        padding: 50px 20px;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rise Up. Push Boundaries. Own Your Strength</h1>
+      <h2>Davanagere's First Calisthenics Festival — Competitions, Workshops & Pure Movement</h2>
+      <a href="#register" class="cta-button">Register Now</a>
+    </div>
+  </section>
+
+  <!-- Event Overview -->
+  <section class="section overview">
+    <h2 class="section-title">Event Overview</h2>
+    <div class="event-info">
+      <div class="info-card">
+        <h3>📅 Date & Time</h3>
+        <p>January 15, 2025<br>8:00 AM - 6:00 PM</p>
+      </div>
+      <div class="info-card">
+        <h3>📍 Location</h3>
+        <p>Central Sports Ground<br>Davanagere, Karnataka</p>
+      </div>
+      <div class="info-card">
+        <h3>🎯 What You Get</h3>
+        <p>Competitions, Expert Workshops, Breakdance Performance & Ice Bath Challenge</p>
+      </div>
+      <div class="info-card">
+        <h3>💪 Why It Matters</h3>
+        <p>Building a calisthenics community in Davanagere — fitness that requires zero equipment, maximum discipline</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section class="section activities">
+    <h2 class="section-title">Event Activities</h2>
+    <div class="activity-grid">
+      <div class="activity-card">
+        <div class="activity-icon">🏆</div>
+        <h3>Competition Module</h3>
+        <p>Push-ups, Pull-ups & Squats challenges with amazing prizes for winners!</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">📚</div>
+        <h3>Workshops</h3>
+        <p>"Intro to Calisthenics Basics" — perfect for beginners wanting to start their journey</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🕺</div>
+        <h3>Breakdance</h3>
+        <p>D-crew performance bringing entertainment and inspiration to the stage</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">❄️</div>
+        <h3>Ice Bath Challenge</h3>
+        <p>Trending recovery challenge — push your limits and create social media magic!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section class="section registration" id="register">
+    <h2 class="section-title">Register Now</h2>
+    <div class="form-container">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age *</label>
+          <input type="number" id="age" placeholder="Your age" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Gender *</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="gender" value="male" required>
+            <span>Male</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="gender" value="female" required>
+            <span>Female</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="gender" value="other" required>
+            <span>Other</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Fitness Experience Level *</label>
+        <select id="experience" required>
+          <option value="">Select your level</option>
+          <option value="beginner">Complete Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="participation">Participation Type *</label>
+        <select id="participation" required>
+          <option value="">Select participation type</option>
+          <option value="competition">Competition Only</option>
+          <option value="workshop">Workshop Only</option>
+          <option value="both">Both Competition & Workshop</option>
+          <option value="spectator">Spectator Only</option>
+        </select>
+      </div>
+
+      <button class="cta-button" onclick="register()" style="width: 100%;">Complete Registration</button>
+      <div class="urgency-badge">🔥 FREE Registration - Limited Spots!</div>
+      <p id="msg"></p>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="section social-proof">
+    <h2 class="section-title">What Our Community Says</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">I started as a complete beginner, now I can do my first pull-up! CaliOG transformed my fitness journey.</p>
+        <p class="testimonial-author">— Rahul M., Davanagere</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">The coaching is incredible. They break down every movement and make it achievable for everyone.</p>
+        <p class="testimonial-author">— Priya S., Fitness Enthusiast</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">Best decision I made was joining this community. Zero equipment, maximum results!</p>
+        <p class="testimonial-author">— Aditya K., Student</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <p style="font-weight: 600; font-size: 1.1rem;">Proud Partners:</p>
+      <p style="color: #667eea; font-weight: 700; margin-top: 10px;">Academy of Strength • Allo Health • Local Fitness Brands</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>What should I wear?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Wear comfortable athletic clothing that allows full range of motion. Shorts or track pants with a breathable t-shirt work great. Bring good grip shoes for outdoor surfaces.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Is this for beginners?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Absolutely! We have dedicated beginner workshops and activities for all fitness levels. Whether you've never done a push-up or you're an advanced athlete, there's something for you.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Do I need to register for all events?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>No, you can choose specific events during registration. You can participate in competitions, workshops, or both. Spectators are also welcome!</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Will there be food and water?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes! Water stations will be available throughout the venue. We'll also have healthy snacks and refreshments. Food stalls will be on-site for purchase.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Can I bring family/friends as spectators?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes! Spectators are welcome and entry is free. Bring your friends and family to cheer you on and experience the energy of Davanagere's calisthenics community!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-cta">
+      <h2 style="margin-bottom: 20px;">Ready to Join the Movement?</h2>
+      <a href="#register" class="cta-button">Register Now - It's Free!</a>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">📞 +91 XXXXX XXXXX</div>
+      <div class="contact-item">✉️ caliog@davanagere.com</div>
+      <div class="contact-item">📱 @caliog_dvg</div>
+      <div class="contact-item">💬 WhatsApp Community</div>
+    </div>
+    <p style="margin-top: 40px; opacity: 0.7;">© 2025 CaliOG Davanagere. Rise Up. Push Boundaries. Own Your Strength.</p>
+  </footer>
+
+  <script>
+    function register() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const age = document.getElementById('age').value;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value;
+      const experience = document.getElementById('experience').value;
+      const participation = document.getElementById('participation').value;
+      const msg = document.getElementById('msg');
+
+      if (!name || !email || !phone || !age || !gender || !experience || !participation) {
+        msg.className = 'error';
+        msg.innerText = 'Please fill in all required fields';
+        return;
+      }
+
+      fetch("/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          phone: phone,
+          age: age,
+          gender: gender,
+          experience: experience,
+          participation: participation
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        msg.className = 'success';
+        msg.innerText = data.message || 'Registration successful! See you at the festival!';
+        document.querySelectorAll('input, select').forEach(el => {
+          if (el.type !== 'radio') el.value = '';
+        });
+        document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+      })
+      .catch(err => {
+        msg.className = 'error';
+        msg.innerText = 'Registration failed. Please try again or contact us directly.';
+      });
+    }
+
+    function toggleFaq(element) {
+      const faqItem = element.parentElement;
+      const allItems = document.querySelectorAll('.faq-item');
+      
+      allItems.forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+        }
+      });
+      
+      faqItem.classList.toggle('active');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
